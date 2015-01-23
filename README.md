@@ -1,5 +1,6 @@
 StoreDB
 =======
+本fork来自于 [https://github.com/djyde/StoreDB](https://github.com/djyde/StoreDB),只针对部分逻辑在实际使用中作一些优化或改良。
 
 [English version](https://github.com/djyde/StoreDB/blob/master/README_EN.md)
 
@@ -13,6 +14,11 @@ Why StoreDB?
 * StoreDB也适用于demo产品的开发。比如，假定你正在参加编程马拉松，你的团队只不过是想做出一个用以展示的demo，却不得不花费时间在远程或本地架设server，再配置数据库，白白浪费了宝贵的时间。使用StoreDB，你只需嵌入一段javascript代码就能实现丰富的数据交互。
 
 * 使用AngularJS配合StoreDB更是如虎添翼。
+
+本fork改进内容
+------
+1.增加createId()方法，使用户可以使用新创建的ID来作其它用途。
+2.修正原作中频繁插入导致_id重复问题。
 
 Demo
 ------

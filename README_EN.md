@@ -5,11 +5,18 @@ StoreDB is a web local database based on localStorage. You can store more comple
 
 Why StoreDB?
 ------
+This fork come from [https://github.com/djyde/StoreDB](https://github.com/djyde/StoreDB), just fixed some bug and improve the logic for real production.
+
 * StoreDB supports large data store and interaction in static webpage without database configuration. Anyone could easily build a powerful SPA(Single Page Application) with StoreDB.
 
 * StoreDB is suitable for the development of demo production. Imagine that you are participating in a marathon programming and time is so running out that you do not have time to set up a local/remote server and database configuration, all your team need is a show demo. Using StoreDB to implement data interaction could be a much better solution.
 
 * combination of AngularJS and StoreDB would be a much more powerful solution.
+
+Modify Details
+------
+1.Add createId() function, the created id can be used for other logic.
+2.Fixed duplicate _id error when insert data frequently.
 
 Example
 ------
