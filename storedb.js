@@ -29,15 +29,26 @@ var storedb = function(collectionName){
                 callback(err,obj);
         },
 
-        find: function(obj, callback){
+        /**
+         *  Query content.
+         * @param obj
+         * @param callback
+         * @param queryType 1: Normal string. 2:Regex string.
+         * @returns {*}
+         */
+        find: function(obj, callback, queryType){
             if(arguments.length == 0){
                 return cache;
             } else {
                 var result = [];
 
                 for(var key in obj){
+                    var regx;
+                    if(queryType && queryType==2){
+                        regx=new RegExp(obj[key],"gi");
+                    }
                     for(var i = 0; i < cache.length; i++){
-                        if(cache[i][key] == obj[key]){
+                        if(cache[i][key] == obj[key] || (queryType && ((queryType==1 && obj[key].indexOf(cache[i][key]) != -1) || (queryType==2 && regx.test(cache[i][key]))))){
                             result.push(cache[i]);
                         }
                     }
