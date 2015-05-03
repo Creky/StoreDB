@@ -48,7 +48,7 @@ var storedb = function(collectionName){
                 for(var key in obj){
                     var regx;
                     for(var i = 0; i < cache.length; i++){
-                        if(cache[i][key] == obj[key] || cache[i][key]=="*" || obj[key].indexOf(cache[i][key]) != -1 || regxMatches(cache[i][key],obj[key]) ){
+                        if(cache[i][key] == obj[key] || cache[i][key]=="*" || (obj[key]&&obj[key].toString().indexOf(cache[i][key]) != -1) || regxMatches(cache[i][key],obj[key]) ){
                             result.push(cache[i]);
                         }
                     }
